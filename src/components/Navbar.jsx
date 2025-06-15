@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 const Navbar = () =>{
     const user = useSelector((store)=>store.user)  
      return (
     <div className="navbar bg-gray-850 bg-opacity-80 backdrop-blur-md text-white px-6 shadow-lg border-b border-gray-700">
       <div className="flex-1 mx-4">
-        <a className="text-2xl font-bold text-white hover:text-primary transition-all cursor-pointer flex items-center gap-2">🧑‍💻DevTinder</a>
+        <Link to="/" className="text-2xl font-bold text-white hover:text-primary transition-all cursor-pointer flex items-center gap-2">🧑‍💻DevTinder</Link>
       </div>
 
   <div className="flex-none gap-4 items-center">
@@ -27,10 +28,9 @@ const Navbar = () =>{
       className="menu menu-sm dropdown-content bg-gray-800 text-white rounded-lg shadow-lg mt-3 w-52 p-2"
     >
       <li>
-        <a className="justify-between">
+        <Link to="/profile" className="justify-between">
           Profile
-          <span className="badge badge-primary badge-sm">New</span>
-        </a>
+        </Link>
       </li>
       <li><a>Settings</a></li>
       <li><a>Logout</a></li>
